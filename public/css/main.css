@@ -1,0 +1,119 @@
+@charset 'utf-8';
+
+html{font-family:'noto sans kr',sans-serif;font-size:14px;}
+body{overflow-x:hidden;color:rgb(29, 29, 31);letter-spacing:-0.05em;background: white;line-height:1.5}
+p{line-height:1.6;}
+a{color: rgb(29, 29, 31);text-decoration: none;}
+body.before-load{overflow:hidden;}
+.before-load .container{display:none;}
+.container{overflow-x:hidden}
+.global-nav{height:44px;padding: 0 1rem;position: absolute;top: 0;left: 0;width:100%;z-index:10}
+.global-nav-links,.local-nav-links{max-width:1000px;margin:0 auto;display:flex;height:100%;align-items:center}
+.global-nav-links{justify-content: space-between;}
+.global-nav-links a{color:white}
+.local-nav-links .product-name{margin-right:auto;font-size:1.2rem}
+.local-nav-links a {font-size:0.8rem;color:white}
+.local-nav{height:52px;border-bottom:1px solid #ddd;padding: 0 1rem;position: fixed;top: 0;left: 0;width:100%;z-index: 11}
+.local-nav-sticky .local-nav{position:fixed;top:0;background:rgba(255,255,255,0.1);backdrop-filter:saturate(180%) blur(15px);-webkit-backdrop-filter:saturate(180%) blur(15px);-moz-backdrop-filter:saturate(180%) blur(15px);-o-backdrop-filter:saturate(180%) blur(15px)}
+.local-nav-sticky .icon{width:30px;height:30px;fill:rgb(29, 29, 31)}
+.local-nav-sticky .local-nav a{color:rgb(29,29,31)}
+.local-nav-sticky .local-nav h1{color:rgb(29,29,31)}
+.local-nav-links a:not(.product-name){margin-left:2em;}
+
+.gnb{position: fixed;top:52px;width:100%;z-index:20;background: #fff;border-bottom:1px solid #ddd;padding:0 1rem;display:none}
+.gnb ul li{line-height:2em;font-size:1.2rem;border-bottom:1px solid #ededed}
+.gnb ul li a:hover{font-size:1.4rem}
+.close{display:none;}
+
+.scroll-section{padding-top: 50vh;}
+.product-name h2{color:white}
+#scroll-section-0 h2{font-size:4rem;text-align:center;position: relative;z-index:5;top:-10vh;color:white}
+#scroll-section-0 p{color:white}
+.main-message{display:flex;align-items:center;justify-content: center;height:3em;font-size:2.5em;margin:5px 0;opacity:0;top:35vh}
+.main-message p{line-height:1.2;font-weight:bold;text-align:center}
+.main-message small{display:block;font-size:1.2rem;margin-bottom:0.5em;}
+#scroll-section-2 .main-message{font-size:3.5rem}
+.description{font-size:1.2rem;color:#888;padding:0 1rem;max-width:1000px;margin:0 auto;}
+.description strong{font-size:3rem;color:rgb(29, 29, 31);float:left;margin-right:0.2em;}
+.desc-message{font-weight:bold;width:50%;opacity: 0;}
+.mid-message{font-size:2rem;color:#888;padding:0 1rem;width:1000px;margin:0 auto}
+.mid-message strong{color:rgb(29, 29, 31);}
+.canvas-caption{color:#888;padding:0 1rem;font-size:1.2rem;max-width:1000px;margin:-24rem auto 0}
+.footer{display:flex;justify-content: center;height: 100px;;background: white;color:white;position: fixed;bottom:0;left:0;margin:auto;width:100%;z-index:6;border-top:1px solid #ddd}
+.footer .box{display:flex;justify-content: space-between;padding:0 1rem;box-sizing: border-box;align-items: center;height:100%;width:100%;max-width: 1000px;margin:auto}
+.footer-box{max-width:1000px;height:150px;display:flex;flex-direction:column}
+.footer ul li a{color:white}
+.footer-menu{display:flex;justify-content: space-between;width:100%;box-sizing: border-box;padding:1rem 1rem 0 1rem;font-size:1rem}
+.footer-column{display:flex;flex-direction:column;justify-content: space-evenly;width:100%;}
+.footer-term{display:flex;width:80%;height:20px;box-sizing: border-box;justify-content: space-between;margin:auto;font-size:0.9rem}
+.social-link{display:flex;width:80%;box-sizing: border-box;padding:0 1rem;margin:20px auto 0;justify-content: space-between;text-align:center;align-items: center;}
+.footer-logo{position: absolute;bottom: 0;width:100%;box-sizing: border-box;text-align:center;padding-bottom:1rem}
+.social-icon{width:30%;height:30%;fill:white}
+.sticky-elem{position:fixed;left:0;width:100%;display:none}
+.footer .icon{width:30px;height:30px;fill:rgb(29, 29, 31)}
+.footer .box a{display:flex;flex-direction:column;align-items: center;}
+.icon{width:30px;height:30px;fill:white;margin-bottom:0.5rem;vertical-align:middle}
+.local-nav .icon{margin-bottom:0}
+
+
+#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-1 #scroll-section-1 .sticky-elem,
+#show-scene-2 #scroll-section-2 .sticky-elem,
+#show-scene-3 #scroll-section-3 .sticky-elem{display:block;will-change:transform,opacity;}
+
+.scroll-effect-end .sticky-elem{display:none !important;}
+.sticky-elem-canvas{top:0;height:100%}
+.sticky-elem-canvas canvas {position: absolute;top:50%;left:50%}
+.image-blend-canvas.sticky{position:fixed;top:0;}
+#scroll-section-3{display:flex;flex-direction: column;align-items: center;position: relative;}
+
+.loading{position: fixed;top: 0;right: 0;bottom: 0;left: 0;z-index:100;background: white;transition:0.5s;opacity:0;display:flex;align-items: center;justify-content: center;}
+.before-load .loading{opacity:1;}
+@keyframes loading-spin{
+    100%{transform: rotate(360deg);}
+}
+@keyframes loading-circle-ani{
+    0%{stroke-dashoffset: 157;}
+    75%{stroke-dashoffset: -147;}
+    100%{stroke-dashoffset: -157;}
+}
+.loading-circle{width: 54px;height: 54px;animation:loading-spin 3s infinite}
+.loading-circle circle{stroke:black;stroke-width: 4;fill:transparent;stroke-dasharray: 157;stroke-dashoffset:0;transition:1s;animation:loading-circle-ani 1s infinite;}
+
+/* getTotalLength()로 stroke의 길이를 얻어올 수 있음 */
+
+/* #scroll-section-3 .normal-content{color:rgb(29, 29, 31);max-width:1000px;font-size: 2rem;}
+.normal-content{padding:20vh 0} */
+
+.scroll-section {position: relative;padding-top: 50vh;color: #fff;}
+#scroll-section-2 h2 {position: relative;top: 50vh;z-index: 5;font-size: 5.5rem;text-align: center;}
+.stroke-message {top: 40vh;font-size: 4.5rem;opacity: 0;}
+.stroke-message.b {font-size: 4.5rem;}
+.stroke-message p {font-weight: bold;text-align: center;line-height: 1.2;}
+.stroke-message small {display: block;margin-bottom: 0.5em;font-size: 1.2rem;}
+.pencil-logo {left: 50%;top: 50%;width: 1000vw;transform: translate(-10%, -50%);}
+.pencil {left: auto;top: auto;right: -10%;bottom: -80%;width: 20vw;animation: ball-spin 3s infinite/* transform: rotate(-180deg); */}
+@keyframes ball-spin{
+	from { 
+		transform: rotate(0deg); 
+	} to { 
+		transform: rotate(360deg); 
+	}
+}
+.ribbon-path {left: 50%;top: 50%;min-width: 850px;transform: translate(-50%, -50%);}
+.ribbon-path path {fill: none;stroke: #FF0044;stroke-width: 62;stroke-linecap: round;stroke-linejoin: round;stroke-dasharray: 1401, 1401;stroke-dashoffset: 1401;}
+
+/* @media(min-width:1024px){
+    #scroll-section-0 h2{font-size:9vw;}
+    .main-message{font-size: 4vw;}
+    .description{font-size: 2rem;padding:0}
+    .description strong{font-size:6rem;}
+    #scroll-section-2 .main-message{font-size:6vw;}
+    .main-message small{font-size:1.5vw;}
+    .desc-message{width:20%}
+    .mid-message{font-size:4vw;padding:0}
+    .canvas-caption{font-size:2rem;padding:0;margin-top:-8rem;}
+	.footer-menu{font-size:1.5rem}
+	.footer-term{font-size:1.2rem;margin-top:20px;}
+	.footer{height:250px}
+} */

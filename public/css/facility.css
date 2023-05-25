@@ -1,0 +1,41 @@
+.local-nav-links{max-width:1000px;margin:0 auto;display:flex;height:100%;align-items:center}
+.local-nav-links .product-name{margin-right:auto;font-size:1.2rem}
+.local-nav-links a {font-size:0.8rem;color:rgba(29,29,31)}
+.local-nav-links h1 {font-weight:bold}
+.local-nav{height:52px;border-bottom:1px solid #ddd;padding: 0 1rem;width:100%;box-shadow: 0 1px 6px rgb(32 33 36 / 100%);position:fixed;top:0;left:0;background: #fff;box-sizing: border-box;}
+.local-nav-links a:not(.product-name){margin-left:2em;}
+.icon{width:30px;height:30px;vertical-align:middle}
+.gnb{position: fixed;top:52px;width:100%;z-index:20;background: #fff;border-bottom:1px solid #ddd;padding:0 1rem;display:none}
+.gnb ul li{line-height:2em;font-size:1.2rem;border-bottom:1px solid #ededed}
+.gnb ul li a:hover{font-size:1.4rem}
+.close{display:none;}
+
+main{margin:52px auto 100px;width:100%;max-width:1000px;box-sizing: border-box;background: #f7ece2;}
+.facility-info{width:100%;height:auto;padding:1rem;box-sizing: border-box;margin:0 auto}
+.facility-info h2{margin-bottom:1rem}
+.facility-info .infoBox{display:flex;flex-direction:column;align-items: center;}
+
+.infoImg{width:100%;border-radius: 20px;}
+.infoImg:after {content: "";display: block;padding-bottom: 100%;}
+.infoDesc{margin-right:auto;background: #fff;width:100%;border-radius: 20px;padding:1rem;box-sizing: border-box;}
+.infoDesc p{display:flex;line-height:2rem}
+.infoDesc strong{font-size:1.2rem;margin-right:auto}
+::-webkit-scrollbar {display: none; }
+.subBox{display:flex;justify-content: space-between;width:100%;margin:1rem auto}
+.subImg{width:30%;cursor:pointer;border-radius:20px}
+.subImg:after {content: "";display: block;padding-bottom: 100%;}
+
+.facility-map{padding:1rem;width:100%;height:auto}
+.facility-map h2{margin-bottom:1rem;color:rgb(29, 29, 31)}
+.map{width:100%;margin:auto;height:auto}
+.map iframe{border-radius:20px}
+
+.footer{position:fixed;bottom:0;left:0;width:100%;height:100px;background: white;border-top:1px solid #ddd}
+.footer .box{display:flex;justify-content: space-between;padding:0 1rem;box-sizing: border-box;align-items: center;height:100%;width:100%;max-width: 1000px;margin:auto}
+.footer .box a{display:flex;flex-direction:column;align-items: center;}
+.footer .box .icon{fill:rgb(29, 29, 31);width:30px;height:30px;margin-bottom:0.5rem}
+
+html{font-size:14px;}
+body{font-family:'noto sans kr',sans-serif;color:rgb(29, 29, 31);letter-spacing:-0.05em;background: white;line-height:1.5}
+p{line-height:1.6;}
+a{color: rgb(29, 29, 31);text-decoration: none;}

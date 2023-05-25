@@ -1,0 +1,45 @@
+.local-nav-links{max-width:1000px;margin:0 auto;display:flex;height:100%;align-items:center;}
+.local-nav-links .product-name{margin-right:auto;font-size:1.2rem}
+.local-nav-links a {font-size:0.8rem;color:white}
+.local-nav-links h1 {font-weight:bold}
+.local-nav{height:52px;border-bottom:1px solid #ddd;padding: 0 1rem;width:100%;box-shadow: 0 1px 6px rgb(32 33 36 / 100%);position:fixed;top:0;left:0;box-sizing: border-box;backdrop-filter:saturate(180%) blur(15px);-webkit-backdrop-filter:saturate(180%) blur(15px);-moz-backdrop-filter:saturate(180%) blur(15px);-o-backdrop-filter:saturate(180%) blur(15px)}
+.local-nav-links a:not(.product-name){margin-left:2em;}
+.icon{width:30px;height:30px;vertical-align:middle}
+.gnb{position: fixed;top:52px;width:100%;z-index:20;background: #fff;border-bottom:1px solid #ddd;padding:0 1rem;display:none}
+.gnb ul li{line-height:2em;font-size:1.2rem;border-bottom:1px solid #ededed}
+.gnb ul li a:hover{font-size:1.4rem}
+.close{display:none;fill:white}
+.open{fill:white}
+
+main{margin:auto;padding-bottom:101px;max-width:1000px;background: #f7ece2;}
+main h2{padding: 1rem}
+.mainImg{width:100%;padding-top:52px;background: #000;}
+.contact-form{display:flex;flex-direction: column;padding:0 1rem;box-sizing: border-box;}
+input[type="text"],select{width:100%;border:none;background:none;}
+
+.text-box{padding:1rem;box-sizing: border-box;background: white;border-radius: 20px;}
+.text-area{width:100%;border:none;background:none;resize:none;font-family:"noto sans kr"}
+.contact-form label{line-height:3rem;font-weight: bold;}
+*:focus{outline:0}
+.contact-form button{padding:1rem;background: #000;color:white;box-sizing: border-box;font-size:1.2rem;border-radius: 20px;box-sizing: border-box;width:45%}
+#sub-btn{padding:1rem;background: #000;color:white;box-sizing: border-box;font-size:1.2rem;border-radius: 20px;box-sizing: border-box;width:45%;border:none}
+.btn-box{display:flex;justify-content: space-between;width:100%;box-sizing: border-box;margin:2rem auto;}
+.btn-box button:first-child{background: #c9c9c9;}
+.sub-box{display:flex;margin-bottom:1rem}
+.sign-up{margin-left:auto}
+.contact-form .birth-box{border:none;background: none;}
+.birth-wrap{display:flex;justify-content: space-between;width:100%}
+.birth-wrap .text-box{width:30%}
+.mobile-wrap{width:100%;display: flex;justify-content: space-between;}
+.mobile-wrap .text-box{width:100%;margin:1rem 1rem 1rem 0}
+.mobile-box{width:50%;background: #000;color:white;border-radius:20px;padding:1rem;text-align: center;margin:1rem 0;cursor:pointer}
+
+.footer{position:fixed;bottom:0;left:0;width:100%;height:100px;background: white;border-top:1px solid #ddd}
+.footer .box{display:flex;justify-content: space-between;padding:0 1rem;box-sizing: border-box;align-items: center;height:100%;width:100%;max-width: 1000px;margin:auto}
+.footer .box a{display:flex;flex-direction:column;align-items: center;}
+.footer .box .icon{fill:rgb(29, 29, 31);width:30px;height:30px;margin-bottom:0.5rem}
+
+html{font-size:14px;}
+body{font-family:'noto sans kr',sans-serif;color:rgb(29, 29, 31);letter-spacing:-0.05em;background: white;}
+p{line-height:1.6;}
+a{color: rgb(29, 29, 31);text-decoration: none;}

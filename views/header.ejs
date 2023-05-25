@@ -1,0 +1,24 @@
+<header>
+    <nav class="local-nav">
+        <div class="local-nav-links">
+            <a href="/" class="product-name"><h1>KTH Basket</h1></a>
+                <a class="open" href="#none"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512"><path d="M64 360c30.9 0 56 25.1 56 56s-25.1 56-56 56s-56-25.1-56-56s25.1-56 56-56zm0-160c30.9 0 56 25.1 56 56s-25.1 56-56 56s-56-25.1-56-56s25.1-56 56-56zM120 96c0 30.9-25.1 56-56 56S8 126.9 8 96S33.1 40 64 40s56 25.1 56 56z"/></svg></a>
+                <a class="close" href="#none"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></a>
+        </div>
+    </nav>
+    <div class="gnb">
+    <ul>
+        <li><a href="/athlete">Athlete Center</a></li>
+        <li><a href="/parent">For Parents</a></li>
+        <li><a href="/facility">Facility</a></li>
+        <li><a href="/instructor">Instructor</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <% if(!u_id){%>
+        <li><a href="/login">Log-In</a></li>
+        <li><a href="/signup">Sign-Up</a></li>
+        <%} else{%>
+        <li><a href="/logout">Log-Out</a></li>
+        <% };%>
+    </ul>
+    </div>
+</header>

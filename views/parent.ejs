@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/parent.css">
+    <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
+    <script src="js/gnb.js"></script>
+    <script src="js/status-btn.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/calender.js"></script>
+    <title>KTH Basket</title>
+    <style>
+        #messages { list-style-type: none; margin: 0; padding: 0; }
+        #messages li { padding: 5px 10px; }
+        #messages li:nth-child(odd) { background: #eee; }
+    </style>
+</head>
+<body>
+<%-include('header.ejs')%>
+    <main>
+        <section class="athlete-info">
+            <div class="athlete-photo"></div>
+            <p class="athlete">Hi, victor's mom<br><small>victor wembanyama</small></p>
+            <ul class="info-list">
+                <li><a class="icon-caption" href="#"><svg class="info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm64 0v64h64V96H64zm384 0H192v64H448V96zM64 224v64h64V224H64zm384 0H192v64H448V224zM64 352v64h64V352H64zm384 0H192v64H448V352z"/></svg><span>class-list</span></a></li>
+                <li><a class="icon-caption" href="#"><svg class="info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg><span>attendance</span></a></li>
+                <li><a class="icon-caption" href="#"><svg class="info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M208 0C322.9 0 416 78.8 416 176C416 273.2 322.9 352 208 352C189.3 352 171.2 349.7 153.9 345.8C123.3 364.8 79.13 384 24.95 384C14.97 384 5.93 378.1 2.018 368.9C-1.896 359.7-.0074 349.1 6.739 341.9C7.26 341.5 29.38 317.4 45.73 285.9C17.18 255.8 0 217.6 0 176C0 78.8 93.13 0 208 0zM164.6 298.1C179.2 302.3 193.8 304 208 304C296.2 304 368 246.6 368 176C368 105.4 296.2 48 208 48C119.8 48 48 105.4 48 176C48 211.2 65.71 237.2 80.57 252.9L104.1 277.8L88.31 308.1C84.74 314.1 80.73 321.9 76.55 328.5C94.26 323.4 111.7 315.5 128.7 304.1L145.4 294.6L164.6 298.1zM441.6 128.2C552 132.4 640 209.5 640 304C640 345.6 622.8 383.8 594.3 413.9C610.6 445.4 632.7 469.5 633.3 469.9C640 477.1 641.9 487.7 637.1 496.9C634.1 506.1 625 512 615 512C560.9 512 516.7 492.8 486.1 473.8C468.8 477.7 450.7 480 432 480C350 480 279.1 439.8 245.2 381.5C262.5 379.2 279.1 375.3 294.9 369.9C322.9 407.1 373.9 432 432 432C446.2 432 460.8 430.3 475.4 426.1L494.6 422.6L511.3 432.1C528.3 443.5 545.7 451.4 563.5 456.5C559.3 449.9 555.3 442.1 551.7 436.1L535.9 405.8L559.4 380.9C574.3 365.3 592 339.2 592 304C592 237.7 528.7 183.1 447.1 176.6L448 176C448 159.5 445.8 143.5 441.6 128.2H441.6z"/></svg><span>chat</span></a></li>
+            </ul>
+    </section>
+    <section class="status">
+        <h2>Status</h2>
+        <ul class="menu">
+            <li><a href="#none"><button>class</button></a></li>
+            <li><a href="#none"><button>payment</button></a></li>
+            <li><a href="#none"><button>report</button></a></li>
+        </ul>
+        <div class="status content">
+            <div class="class">
+                <h3>Class</h3>
+                <p><span class="title">Name</span><span class="desc">Victor Wembanyama</span></p>
+                <p><span class="title">Class</span><span class="desc">High School Elite course</span></p>
+                <p><span class="title">Instructor</span><span class="desc">Tae Hyung Kim</span></p>
+                <p><span class="title">Day of the week</span><span class="desc">Only weekday</span></p>
+                <p><span class="title">Date</span><span class="desc">14th-AUG-2022</span></p>
+                <p><span class="title">End a course</span><span class="desc">14th-FEB-2023</span></p>
+            </div>
+            <div class="payment">
+                <h3>Payment</h3>
+                <p><span class="title">Tuition</span><span class="desc">KRW 300,000 / month</span></p>
+                <p><span class="title">Renewed Date</span><span class="desc">14th-AUG-2022</span></p>
+                <p><span class="title">Expired Date</span><span class="desc">14th-FEB-2023</span></p>
+                <div class="btn-box"><button class="cancel">cancel</button><button class="renew">renew</button></div>
+            </div>
+            <div class="monthly-report">
+                <h3>Monthly Report</h3>
+                <ul>
+                    <li><a href="#"><button>JAN-2022</button></a></li>
+                    <li><a href="#"><button>DEC-2022</button></a></li>
+                    <li><a href="#"><button>NOV-2022</button></a></li>
+                    <li><a href="#"><button>OCT-2022</button></a></li>
+                    <li><a href="#"><button>SEP-2022</button></a></li>
+                    <li><a href="#"><button>AUG-2022</button></a></li>
+                </ul>
+                <div class="report"></div>
+            </div>
+        </div>
+    </section>
+    <section class="classList">
+        <h2>Class-List</h2>
+        <ul class="list">
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href="">5</a></li>
+            <li><a href="">6</a></li>
+            <li><a href="">7</a></li>
+            <li><a href="">8</a></li>
+        </ul>
+    </section>
+    <section class="attend">
+        <h2>Attendance</h2>
+        <div class="sec_cal">
+            <div class="cal_nav">
+              <a href="#" class="nav-btn go-prev">prev</a>
+              <div class="year-month"></div>
+              <a href="#" class="nav-btn go-next">next</a>
+            </div>
+            <div class="cal_wrap">
+              <div class="days">
+                <div class="day">MON</div>
+                <div class="day">TUE</div>
+                <div class="day">WED</div>
+                <div class="day">THU</div>
+                <div class="day">FRI</div>
+                <div class="day">SAT</div>
+                <div class="day">SUN</div>
+              </div>
+              <div class="dates"></div>
+            </div>
+          </div>
+    </section>
+    <section class="chat">
+        <h2>Chat</h2>
+        <div class="row">
+            <!-- 대기실 -->
+            <!-- <div class="col-lg-4" id="others-chat">
+            <div class="card">
+                <div class="card-header">
+                    With other parents
+                </div>
+                <div class="card-body">
+                <form action="">
+                    <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="m" autocomplete="off" />
+                    <div class="input-group-append">
+                        <button id="msg-send" class="btn btn-primary" placeholder="message">Send</button>
+                    </div>
+                    </div>
+                </form>
+                </div>
+                <div class="card-footer">
+                <ul id="messages"></ul>
+                </div>
+            </div>
+            </div> -->
+            <!-- 방선택 -->
+            <div class="col-lg-8" id="instructor-chat">
+                <div class="card">
+                    <div class="card-header">
+                        With Instructor
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-1">
+                            <select id="select-room" class="form-control">
+                                <option value="none" selected="selected">강사를 선택해주세요</option>
+                                <!-- 수동으로 만들어진 채팅 방 -->
+                                <option value="Taehyung Kim">Taehyung Kim</option>
+                                <option value="Lebron James">Lebron James</option>
+                                <option value="Stephen Curry">Stephen Curry</option>
+                                <option value="Kevin Durant">Kevin Durant</option>
+                                <option value="Luka Doncic">Luka Doncic</option>
+                            </select>
+                            <div class="input-group-append">
+                                <button id="select-room-button" class="btn btn-success" placeholder="message">Select</button>
+                            </div>
+                        </div>
+                        <!-- <form action="">
+                            <div class="input-group mb-1">
+                                <input type="text" class="form-control" id="room-message" autocomplete="off" />
+                                <div class="input-group-append">
+                                    <button id="room-msg-send" class="btn btn-primary" placeholder="message">Send</button>
+                                </div>
+                            </div>
+                        </form> -->
+                    </div>
+                    <div class="card-footer">
+                        <ul id="room-messages"></ul>
+                        <form action="">
+                            <div class="input-group mb-1">
+                                <input type="text" class="form-control" id="room-message" autocomplete="off" />
+                                <div class="input-group-append">
+                                    <button id="room-msg-send" class="btn btn-primary" placeholder="message">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<%-include('footer.ejs')%>
+<script src="js/chat.js"></script>
+</body>
+</html>

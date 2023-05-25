@@ -1,0 +1,198 @@
+.local-nav-links{max-width:1000px;margin:0 auto;display:flex;height:100%;align-items:center}
+.local-nav-links .product-name{margin-right:auto;font-size:1.2rem}
+.local-nav-links a {font-size:0.8rem;color:rgba(29,29,31)}
+.local-nav-links h1 {font-weight:bold}
+.local-nav{height:52px;border-bottom:1px solid #ddd;padding: 0 1rem;width:100%;box-shadow: 0 1px 6px rgb(32 33 36 / 100%);position:fixed;top:0;left:0;background: #fff;z-index:10}
+.local-nav-links a:not(.product-name){margin-left:2em;}
+.icon{width:30px;height:30px;vertical-align:middle}
+
+.gnb{position: fixed;top:52px;width:100%;z-index:20;background: #fff;border-bottom:1px solid #ddd;padding:0 1rem;display:none}
+.gnb ul li{line-height:2em;font-size:1.2rem;border-bottom:1px solid #ededed}
+.gnb ul li a:hover{font-size:1.4rem}
+.close{display:none;}
+
+
+main{max-width:1000px;background: #f7ece2;width:100%;height:auto;box-sizing: border-box;margin:52px auto 0;padding-bottom:101px}
+.athlete-info{width: 100%;padding:2rem 1rem 1rem 1rem;box-sizing: border-box;background: #fc9200;height:300px;border-radius:0 0 20px 20px;margin-bottom:2rem;color:white;display:flex;flex-direction:column;justify-content: space-between;align-items: center;}
+.athlete-photo{width:120px;height: 120px;background-image: url(../images/victor.jpeg);background-size:100px;background-position:center;border-radius: 50%;}
+.info-list{display:flex;justify-content: space-between;width:70%}
+.info-icon{fill:white;width:30px;height:30px}
+.athlete{font-size:1.5rem;}
+.athlete small{display:block;text-align: center;}
+.info{padding:0 1rem;box-sizing: border-box;margin: 0 auto 3rem;}
+.icon-caption{display:flex;flex-direction:column;justify-content: center;align-items: center;color:white}
+.icon-caption span{margin-top:0.3rem;min-width:60px;text-align: center;}
+.status{width:100%;box-sizing: border-box;padding:1rem;}
+.menu{display:flex;}
+.menu button{padding:1rem;background: #f54748;border-radius:20px;font-size:1.2rem;color:#fff;margin: 1rem 2rem 1rem 0}
+.menu button:hover{background: #000;}
+.content>div h3{margin-bottom:1rem}
+.content{height:auto;margin-bottom:1rem;}
+.status .content{background: #fff;border-radius:20px}
+.title{font-size:1.3rem;display:block;width:50%}
+.status .class p{display:flex;align-items: center;width:100%}
+.desc{display:block;line-height:1.3rem;margin-right:auto}
+.payment, .monthly-report{display:none}
+.status .payment p{display:flex;align-items: center;width:100%}
+.btn-box{display: flex;margin-top:1rem}
+.cancel{margin-left:auto;padding:1rem;background: #ddd;border-radius:20px}
+.renew{padding:1rem;background:#6d33ff;color:white;border-radius:20px;margin-left:10px}
+.monthly-report ul{display:flex;flex-wrap:wrap}
+.monthly-report button:hover{color:blue}
+.monthly-report button{margin-bottom:0.5rem}
+.report{display:none}
+.attend h2{margin:1rem 0}
+
+.classList{padding:0 1rem;margin-bottom:1rem}
+.classList h2{margin-bottom:1rem}
+.classList .list{display:flex;flex-wrap:nowrap;overflow:scroll}
+.list li{display:flex;align-items: center;justify-content: center;}
+.list li a{display:block;width:120px; height:80px;background: #fff;margin-right:1rem;border-radius:20px;text-align: center;line-height:80px}
+::-webkit-scrollbar {display: none;}
+
+.attend{padding:0 1rem;}
+.chat{padding:0 1rem;}
+.chat h2{margin:1rem 0}
+
+#others-chat{margin-bottom:1rem}
+
+.footer{position:fixed;bottom:0;left:0;width:100%;height:100px;background: white;border-top:1px solid #ddd;z-index:10}
+.footer .box{display:flex;justify-content: space-between;padding:0 1rem;box-sizing: border-box;align-items: center;height:100%;width:100%;max-width: 1000px;margin:auto}
+.footer .box a{display:flex;flex-direction:column;align-items: center;}
+.footer .box .icon{fill:rgb(29, 29, 31);width:30px;height:30px;margin-bottom:0.5rem}
+
+html{font-size:14px;}
+body{font-family:'noto sans kr',sans-serif;color:rgb(29, 29, 31);letter-spacing:-0.05em;background: white;line-height:1.5}
+p{line-height:1.6;}
+a{color: rgb(29, 29, 31);text-decoration: none !important}
+table{text-align:center}
+
+.card .card-footer #room-messages{display:flex;flex-direction: column-reverse;height:100%;overflow:scroll;box-sizing: border-box;margin:1rem 0}
+.card-footer{background: #9bbbd4;height:500px;display:flex;flex-direction: column;justify-content: space-between;}
+.my-msg{padding:10px;background: #fef01b;color:rgb(29, 29, 31);width:auto;border-radius: 20px;margin:5px 0 5px auto}
+.your-msg{padding:10px;background: #fff;color:rgb(29, 29, 31);width:auto;border-radius:20px;margin:5px auto 5px 0}
+.notice-msg{text-align:center;margin:10px auto;}
+
+
+@media(min-width:1024px){
+}
+
+
+.sec_cal {
+    width: 100%;
+    margin: 0 auto;
+    font-family: "NotoSansR";
+    background: white;
+    padding:1rem;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.sec_cal .cal_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 78px;
+}
+
+.sec_cal .cal_nav .year-month {
+    width: 300px;
+    text-align: center;
+    line-height: 1;
+}
+
+.sec_cal .cal_nav .nav {
+    display: flex;
+    border: 1px solid #333333;
+    border-radius: 5px;
+}
+
+.sec_cal .cal_nav .go-prev,
+.sec_cal .cal_nav .go-next {
+    display: block;
+    width: 50px;
+    height: 78px;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec_cal .cal_nav .go-prev::before,
+.sec_cal .cal_nav .go-next::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #000;
+    border-width: 3px 3px 0 0;
+    transition: border 0.1s;
+}
+
+.sec_cal .cal_nav .go-prev:hover::before,
+.sec_cal .cal_nav .go-next:hover::before {
+    border-color: #ed2a61;
+}
+
+.sec_cal .cal_nav .go-prev::before {
+    transform: rotate(-135deg);
+}
+
+.sec_cal .cal_nav .go-next::before {
+    transform: rotate(45deg);
+}
+
+.sec_cal .cal_wrap {
+    padding-top: 40px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.sec_cal .cal_wrap .days {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sec_cal .cal_wrap::after {
+    top: 368px;
+}
+
+.sec_cal .cal_wrap .day {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 7);
+    text-align: left;
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+    border-radius:5px
+}
+
+.current.today {background: rgb(242 242 242);}
+
+.current.match {background:turquoise;}
+.current.drill {background:orange
+    ;}
+
+.sec_cal .cal_wrap .dates {
+    display: flex;
+    flex-flow: wrap;
+    height: 290px;
+}
+
+.sec_cal .cal_wrap .day:nth-child(7n -1) {
+    color: #3c6ffa;
+}
+
+.sec_cal .cal_wrap .day:nth-child(7n) {
+    color: #ed2a61;
+}
+
+.sec_cal .cal_wrap .day.disable {
+    color: #ddd;
+}

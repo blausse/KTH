@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
+    <script src="js/gnb.js"></script>
+    <script>
+        $(function(){
+            var year = $("#year").val()
+            var month = $("#month option:selected").val()
+            var day = $("#day").val()
+            $('#sub-btn').click(function(){
+                $.ajax({
+                    url:'/login',
+                    async:true,
+                    type:'POST',
+                    data:{
+                        u_id: $("#u_id").val(),
+                        pwd: $("#pwd").val(),
+                    },
+                    dataType:'json',
+                    success:function(data){
+                        location.href="/";
+                    },
+                    error:function(err){
+                        
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <%-include('header.ejs')%>
+    <main>
+        <img class="mainImg" src="../images/b-gang.jpeg" alt="">
+        <h2>Log-In</h2>
+            <div class="contact-form">
+                <label for="">ID</label><span class="text-box"><input type="text" class="id-box" id="u_id"></span>
+                <label for="">PW</label><span class="text-box"><input type="text" id="pwd"></span>
+                <div class="btn-box">
+                <button>Prev</button>
+                <input type="submit" value="Log-In" id="sub-btn">
+                </div>
+                <div class="sub-box">                
+                <a href="#">ID / PW?</a>
+                <a href="#" class="sign-up">Sign-Up</a>
+                </div>
+            </div>
+    </main>
+    <%-include('footer.ejs')%>
+</body>
+</html>

@@ -1,0 +1,46 @@
+.athlete-info{width: 100%;padding:2rem 1rem 1rem 1rem;box-sizing: border-box;background: #84a59d;height:300px;border-radius:0 0 20px 20px;margin-bottom:2rem;color:white;display:flex;flex-direction:column;justify-content: space-between;align-items: center;}
+.athlete-photo{width:120px;height: 120px;background-image: url(/images/victor.jpeg);background-size:100px;background-position:center;border-radius: 50%;}
+.info-list{display:flex;justify-content: space-between;width:70%}
+.info-icon{fill:white;width:30px;height:30px}
+.athlete{font-size:1.5rem;}
+.athlete small{display:block;text-align: center;}
+.info{padding:0 1rem;box-sizing: border-box;margin: 0 auto 3rem;}
+.icon-caption{display:flex;flex-direction:column;justify-content: center;align-items: center;color:white}
+.icon-caption span{margin-top:0.3rem;min-width:60px;text-align: center;}
+.table tr{border-bottom:1px solid #ddd}
+.local-nav-links .product-name{margin-right:auto;font-size:1.2rem}
+.local-nav-links a {font-size:0.8rem;color:rgba(29,29,31)}
+.local-nav-links h1 {font-weight:bold}
+.local-nav{height:52px;border-bottom:1px solid #ddd;padding: 0 1rem;position: fixed;top: 0;left: 0;width:100%;z-index: 11;box-shadow: 0 1px 6px rgb(32 33 36 / 100%);background: #fff;}
+
+.local-nav-links a:not(.product-name){margin-left:2em;}
+.local-nav-links{max-width:1000px;margin:0 auto;display:flex;height:100%;align-items:center}
+.icon{width:30px;height:30px;vertical-align:middle}
+
+.gnb{position: fixed;top:52px;width:100%;z-index:20;background: #fff;border-bottom:1px solid #ddd;padding:0 1rem;display:none}
+.gnb ul li{line-height:2em;font-size:1.2rem;border-bottom:1px solid #ededed}
+.gnb ul li a:hover{font-size:1.4rem}
+.close{display:none;}
+
+.video-list{display:flex;flex-wrap:nowrap;justify-content: space-between;overflow:scroll}
+.video-box{width:48%;margin-right:1rem;position: relative;height:auto;min-width:150px}
+.video-box:after{content:"";display:block;padding-bottom:100%}
+.inner{position: absolute;width: 100%;height:100%;top:0;left:0}
+.list{width:48%;margin-bottom:1rem}
+::-webkit-scrollbar {display: none; }
+h2{margin-bottom:1rem;font-weight:bold;color:rgb(29, 29, 31)}
+h3{font-weight:normal;margin-bottom:0.5rem}
+main{padding-bottom:100px;max-width:1000px;margin:52px auto 0;background: #f7ece2;}
+.ach-box{background: #fff;padding:1rem;box-sizing: border-box;border-radius: 20px;}
+
+.footer{position:fixed;bottom:0;left:0;width:100%;height:100px;background: white;border-top:1px solid #ddd}
+.footer .box{display:flex;justify-content: space-between;padding:0 1rem;box-sizing: border-box;align-items: center;height:100%;width:100%;max-width: 1000px;margin:auto}
+.box a{display:flex;flex-direction:column;align-items: center;}
+.footer .box .icon{fill:rgb(29, 29, 31);width:30px;height:30px;margin-bottom:0.5rem}
+
+html{font-size:14px;}
+body{font-family:'noto sans kr',sans-serif;color:rgb(29, 29, 31);letter-spacing:-0.05em;background: white;line-height:1.5}
+p{line-height:1.6;}
+a{color: rgb(29, 29, 31);text-decoration: none;}
+table{text-align:center}
+.table-responsive{background: #fff;padding:1rem;box-sizing: border-box;border-radius: 20px;}

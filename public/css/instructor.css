@@ -1,0 +1,34 @@
+.local-nav-links{max-width:1000px;margin:0 auto;display:flex;height:100%;align-items:center}
+.local-nav-links .product-name{margin-right:auto;font-size:1.2rem}
+.local-nav-links a {font-size:0.8rem;color:rgba(29,29,31)}
+.local-nav-links h1 {font-weight:bold}
+.local-nav{height:52px;border-bottom:1px solid #ddd;padding: 0 1rem;width:100%;box-shadow: 0 1px 6px rgb(32 33 36 / 100%);position:fixed;top:0;left:0;background: #fff;box-sizing: border-box;}
+.local-nav-links a:not(.product-name){margin-left:2em;}
+.icon{width:30px;height:30px;vertical-align:middle}
+.gnb{position: fixed;top:52px;width:100%;z-index:20;background: #fff;border-bottom:1px solid #ddd;padding:0 1rem;display:none}
+.gnb ul li{line-height:2em;font-size:1.2rem;border-bottom:1px solid #ededed}
+.gnb ul li a:hover{font-size:1.4rem}
+.close{display:none;}
+
+main{padding:52px 1rem 101px 1rem;margin:auto;width:100%;max-width:1000px;background: #f7ece2;box-sizing: border-box;}
+main h2{margin:1rem 0}
+.instructor-list{width:100%;height:100px;background: #fff;margin-bottom:1rem;box-sizing: border-box;border-radius:20px;padding:1rem;}
+.instructor-desc{display:flex;justify-content: space-between;height:100%;align-items: center;}
+.instructor-desc p a{color:white}
+.instructor-desc ul{display:flex;flex-direction: column;justify-content: space-between;align-items: flex-end;height:100%;color:white;font-weight: bold;}
+.lebron{background: no-repeat 50% 20%/cover url(../images/lebron.jpeg)}
+.curry{background: no-repeat 50% 15%/cover url(../images/curry.jpeg)}
+.durant{background: no-repeat 50% 55%/cover url(../images/durant.jpeg)}
+.luka{background: no-repeat center/cover url(../images/luka.jpeg)}
+.kim{background: no-repeat center/cover url(../images/kim.jpeg)}
+
+
+.footer{position:fixed;bottom:0;left:0;width:100%;height:100px;background: white;border-top:1px solid #ddd}
+.footer .box{display:flex;justify-content: space-between;padding:0 1rem;box-sizing: border-box;align-items: center;height:100%;width:100%;max-width: 1000px;margin:auto}
+.footer .box a{display:flex;flex-direction:column;align-items: center;}
+.footer .box .icon{fill:rgb(29, 29, 31);width:30px;height:30px;margin-bottom:0.5rem}
+
+html{font-size:14px;}
+body{font-family:'noto sans kr',sans-serif;color:rgb(29, 29, 31);letter-spacing:-0.05em;background: white;line-height:1.5}
+p{line-height:1.6;}
+a{color: rgb(29, 29, 31);text-decoration: none;}

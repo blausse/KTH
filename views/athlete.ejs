@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/athlete_info.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/gnb.js"></script>
+  <title>KTH Basket</title>
+</head>
+<body>
+  <%-include('header.ejs')%>
+    <main>
+        <section class="athlete-info">
+                <div class="athlete-photo"></div>
+                <p class="athlete">Victor Wembanyama, G<br><small>High School Elite</small></p>
+                <ul class="info-list">
+                    <li><a class="icon-caption" href="#"><svg class="info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"/></svg><span>info</span></a></li>
+                    <li><a class="icon-caption" href="#"><svg class="info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M184.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L39 113c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L39 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM256 96c0-17.7 14.3-32 32-32H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H288c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H288c-17.7 0-32-14.3-32-32zM192 416c0-17.7 14.3-32 32-32H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H224c-17.7 0-32-14.3-32-32zM80 464c-26.5 0-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48s-21.5 48-48 48z"/></svg><span>to-do list</span></a></li>
+                    <li><a class="icon-caption" href="#"><svg class="info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M365.3 93.38l-74.63-74.64C278.6 6.742 262.3 0 245.4 0H64C28.65 0 0 28.65 0 64l.0065 384c0 35.34 28.65 64 64 64H320c35.2 0 64-28.8 64-64V138.6C384 121.7 377.3 105.4 365.3 93.38zM336 448c0 8.836-7.164 16-16 16H64.02c-8.838 0-16-7.164-16-16L48 64.13c0-8.836 7.164-16 16-16h160L224 128c0 17.67 14.33 32 32 32h79.1V448zM240 288c0-17.67-14.33-32-32-32h-96c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32v-16.52l43.84 30.2C292.3 403.5 304 397.6 304 387.4V284.6c0-10.16-11.64-16.16-20.16-10.32L240 304.5V288z"/></svg><span>your video</span></a></li>
+                </ul>
+        </section>
+        <section class="achievement info">
+            <h2>Achievement</h2>
+            <div class="ach-box">
+                <canvas id="myChart" width="100%"></canvas>
+            </div>
+        </section>
+        <section class="class-video info">
+            <h2>Class</h2>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Shooting
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="video-list">
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/aAqei_f5ptk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/raWZXY5Td7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/rx1yTCpoakA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/26XsEhulNZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/U6zWb4XFXTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/zChPI1zG-O0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Dribble
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="video-list">
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/aAqei_f5ptk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/raWZXY5Td7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/rx1yTCpoakA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/26XsEhulNZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/U6zWb4XFXTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/zChPI1zG-O0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Pass
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="video-list">
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/aAqei_f5ptk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/raWZXY5Td7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/rx1yTCpoakA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/26XsEhulNZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/U6zWb4XFXTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/zChPI1zG-O0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Step
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="video-list">
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/aAqei_f5ptk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/raWZXY5Td7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/rx1yTCpoakA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/26XsEhulNZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/U6zWb4XFXTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/zChPI1zG-O0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Defense
+                    </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="video-list">
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/aAqei_f5ptk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/raWZXY5Td7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/rx1yTCpoakA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/26XsEhulNZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/U6zWb4XFXTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/zChPI1zG-O0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      Tactic
+                    </button>
+                  </h2>
+                  <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="video-list">
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/aAqei_f5ptk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/raWZXY5Td7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/rx1yTCpoakA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/26XsEhulNZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/U6zWb4XFXTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-box">
+                                <iframe class=inner width="560" height="315" src="https://www.youtube.com/embed/zChPI1zG-O0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section class="record info">
+            <h2>Record</h2>
+            <div class="table-responsive">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">대회명</th>
+                    <th scope="col">득점</th>
+                    <th scope="col">어시스트</th>
+                    <th scope="col">파울</th>
+                    <th scope="col">슛 성공률</th>
+                    <th scope="col">출전시간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">구대회</th>
+                    <td>17</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>33%</td>
+                    <td>30분</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">시대회</th>
+                    <td>25</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>41%</td>
+                    <td>23분</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">전국체전</th>
+                    <td >11</td>
+                    <td >3</td>
+                    <td>4</td>
+                    <td>27%</td>
+                    <td>35분</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </section>
+    </main>
+    <%-include('footer.ejs')%>
+    <script>
+        const ctx = document.getElementById('myChart');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Weigth', 'Shooting', 'Dribble', 'Pass', 'Defense', 'Step'],
+            datasets: [{
+              label: 'your status',
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1,
+              backgroundColor:"rgba(242,132,130,0.5)"
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              }
+            }
+          }
+        });
+    </script>
+</body>
+</html>

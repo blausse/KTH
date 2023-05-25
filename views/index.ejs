@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>KTH Basket</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
+	<script src="js/gnb.js"></script>
+</head>
+<body class="before-load">
+	<div class="loading">
+		<svg class="loading-circle">
+			<circle cx="50%" cy="50%" r="25"></circle>
+		</svg>
+	</div>
+	<div class="container">
+		<%-include('header.ejs')%>
+	<section class="scroll-section" id="scroll-section-0">
+		<h2>KTH Basket</h2>
+		<div class="sticky-elem sticky-elem-canvas"><canvas id="video-canvas-0" width="1920" height="1080"></canvas></div>
+		<div class="sticky-elem main-message a"><p>성실함</p></div>
+		<div class="sticky-elem main-message b"><p>끈기</p></div>
+		<div class="sticky-elem main-message c"><p>관심</p></div>
+		<div class="sticky-elem main-message d"><p><strong>KTH Basket</strong></p></div>
+	</section>
+	<section class="scroll-section" id="scroll-section-1">
+		<p class="description">
+			<strong>성실함,</strong>
+			다른 코치들이 쉴 때, <br>선수 한명이라도 더 봐주고,<br>공도 한번 더 잡아주는 코치<br>
+			<small>김태형 코치가 농구와 연을 맺은건 누나의 영향이 컸다. 친구들과 뛰어노는걸 좋아했고, 운동에 소질도 있었던 그는 어릴 적 누나의 농구 경기를 자주 보러 다녔다.<br>"원래 공부보다는 운동을 좋아했어요. 어렸을 때는 공부는 안하고 뛰어놀기만 했던 것 같아요. 농구 외에도 축구나 다른 스포츠도 접했는데, 누나의 농구 경기가 끝나고 있었던 고등학교 형들 경기를 보면서 특히 농구가 멋있어 보였어요."<br>농구 명문 명지고를 거쳐 유망주로 인정받으며 성균관대에 입학했지만, 김태형 코치는 힘든 대학 시절을 보냈다. 심지어 운동을 그만둘 생각도 많이 했다.<br>"대학 시절, 프로와의 연습경기에서는 출전 기회를 거의 못 받았어요. 저는 정식 시합에 주로 나왔는데, 실수에서 살아남으려다보니 소극적으로 변했어요."<br>대학 시절에 운동하기 싫었다고 말한 그였지만, 후배들은 엄청난 연습벌레라 기억한다.<br>"후배들은 제가 쉬지 않고 훈련했다고 하더라고요. 그래도 제 기준에는 많이 못 미쳤던 시절이었어요"<br>이어 그는 대학 시절에 대해 아쉬움이 많이 남는다고 전했다.<br>"대학생 때는 위축돼서 주변의 눈치를 많이 봤던 것 같아요. 그래서 그 시절에만 경험해볼 수 있는 것들을 많이 해보지 못했어요."</small>
+		</p>
+	</section>
+	<section class="scroll-section" id="scroll-section-2">
+		<h2>Find</h2>
+		<object class="sticky-elem pencil-logo" data="images/KTH-logo.svg" type="image/svg+xml"></object>
+		<div class="sticky-elem stroke-message a">
+			<p>your</p>
+		</div>
+		<span class="sticky-elem ribbon-path">
+			<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+				<path class="st1" d="M709,41.5c-194,38-387,122-455,159c-64.13,34.89-73.4,42.42,20,26c82.5-14.5,126.34-33.68,185-38 c47.5-3.5,69.22,7.98-11,39c-75,29-251,98-459,169"></path>
+			</svg>
+		</span>
+		<div class="sticky-elem stroke-message b">
+			<p>Passion</p>
+		</div>
+		<img class="sticky-elem pencil" src="images/ball.png">
+		
+	</section>
+	<section class="scroll-section" id="scroll-section-3">
+		<p class="mid-message">
+			<strong>Philosophy of coaching</strong><br>
+			꿈을 광활하게 펼칠<br>
+			자유롭고 엄격한 공간.
+		</p>
+		<canvas class="image-blend-canvas" width="1920" height="1080"></canvas>
+		<p class="canvas-caption">
+			'전화위복'이라는 말이 있다. 힘들었던 대학 시절이었지만, 그때의 경험이 현재 코치 생활의 자양분이 됐다.<br>"대학 시절로 다시 돌아가고 싶진 않은데, 그때가 없었으면 제가 선수들을 이해하는 부분이 많이 부족했을 것 같아요. 지도자로서 선수의 상황과 감정을 아는 것이 굉장히 중요한데, 대학생때가 그에 대해 많이 배웠던 시절이었거든요. 4년동안 정말 힘들었던 만큼, 현재 선수들을 지도하는데 있어서 선수들을 이해하고 공감할 수 있게 됐어요."<br>그는 자신의 대학 생활에 아쉬움이 많이 남는 만큼 현재 선수들에게 최대한 많은 것들을 누리게 해주고 싶다고 한다.<br>"선수들에게 저는 운동할 때와 쉴 때가 확실히 다른 사람이라고 말해요. 운동할 때는 모든 것에 트집을 잡지만, 그 외의 것들엔 자유로운 편이에요. 지도자가 되니 대학생때 할 수 있는 것들은 반드시 그 시절에 해야 추억이 된다는 것을 깨달았어요. 축제처럼 대학생들만의 즐거움을 최대한 만끽하게 해주고 싶어요."
+		</p>
+	</section>
+	<%-include('footer.ejs')%>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html> 
